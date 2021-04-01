@@ -3,15 +3,16 @@ The goal of the project is to build a Pizza Ordering System.
 
 Architecture [REQUIRED]
 [solution] PizzaBox.sln
-[project - console] PizzaBox.Client.csproj
-[project - classlib] PizzaBox.Domain.csproj
-[folder] Abstracts
-[folder] Interfaces
-[folder] Models
-[project - classlib ] PizzaBox.Storing.csproj
-[folder] Repositories
-[project - xunit] PizzaBox.Testing.csproj
-[folder] Tests
+    [project - console] PizzaBox.Client.csproj
+    [project - classlib] PizzaBox.Domain.csproj
+        [folder] Abstracts
+        [folder] Interfaces
+        [folder] Models
+    [project - classlib ] PizzaBox.Storing.csproj
+        [folder] Repositories
+    [project - xunit] PizzaBox.Testing.csproj
+        [folder] Tests
+
 Requirements
 The project should support objects of Customer, Store, Order, Pizza.
 
