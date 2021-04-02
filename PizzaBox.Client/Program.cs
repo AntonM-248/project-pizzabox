@@ -2,6 +2,7 @@
 
 using PizzaBox.Domain.Abstracts;
 using PizzaBox.Domain.Models;
+using PizzaBox.Domain.Singletons;
 
 namespace PizzaBox.Client
 {
@@ -34,14 +35,18 @@ namespace PizzaBox.Client
         private static void StaticRun()
         {
             System.Console.WriteLine("Welcome to PizzaBox");
-            var stores = new List<AStore>()
+            var store = StoreSingleton.Instance;
+
+            var pizzas = PizzaSingleton.Instance;
+
+            foreach (var item in store.Stores)
             {
-                new NewYorkStore(),
-                new ChicagoStore(),
-            };
-            foreach (var item in stores)
+                System.Console.WriteLine(item.Name);
+            }
+            store.WriteToFile();
+            foreach (var item in pizzas.Pizzas)
             {
-                System.Console.WriteLine(item);
+                System.Console.WriteLine($"{item.Crust} {item.Size}");
             }
         }
     }
