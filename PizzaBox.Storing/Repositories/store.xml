@@ -6,4 +6,10 @@
   <AStore xsi:type="ChicagoStore">
     <Name>ChicagoStore</Name>
   </AStore>
+   <AStore xsi:type="NewYorkStore">
+    <Name>BostonStore</Name>
+  </AStore>
+  <AStore xsi:type="ChicagoStore">
+    <Name>WashingtonStore</Name>
+  </AStore>
 </ArrayOfAStore>

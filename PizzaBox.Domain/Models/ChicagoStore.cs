@@ -8,5 +8,9 @@ namespace PizzaBox.Domain.Models
         {
             Name = "ChicagoStore";
         }
+        public override string ToString()
+        {
+            return $"This is Chitown - {Name}";
+        }
     }
 }

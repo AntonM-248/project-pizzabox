@@ -1,53 +1,77 @@
-﻿using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.Generic;
 using PizzaBox.Domain.Abstracts;
 using PizzaBox.Domain.Models;
-using PizzaBox.Domain.Singletons;
+using PizzaBox.Client.Singletons;
 
 namespace PizzaBox.Client
 {
-    class Program
+    internal class Program
     {
+        private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
+        private static readonly PizzaSingleton _pizzaSingleton = PizzaSingleton.Instance;
+
         private static void Main(string[] args)
         {
-            //var is useful here because Program() handles instantiation
-            //and can more easily be changed later
-            //ie var p = new App();
-            var p = new Program();
-            p.Run();
-            //Static methods can be called without instantiating an obj
-            StaticRun();
-            string a = "Jon Jon";
-            a = p.give();
-            //System.Console.WriteLine(a);
+            Run();
         }
 
-        private string give()
+        private static void Run()
         {
-            return "King Kong";
+            var order = new Order();
+
+            Console.WriteLine("Welcome to PizzaBox");
+            DisplayStoreMenu();
+
+            order.Customer = new Customer();
+            order.Store = SelectStore();
+            order.Pizza = SelectPizza();
+
+            order.Save();
         }
 
-        private void Run()
+        private static void DisplayOrder(APizza pizza)
         {
-
+            Console.WriteLine($"Your order is: {pizza}");
         }
 
-        private static void StaticRun()
+        private static void DisplayPizzaMenu()
         {
-            System.Console.WriteLine("Welcome to PizzaBox");
-            var store = StoreSingleton.Instance;
+            var index = 0;
 
-            var pizzas = PizzaSingleton.Instance;
-
-            foreach (var item in store.Stores)
+            foreach (var item in _pizzaSingleton.Pizzas)
             {
-                System.Console.WriteLine(item.Name);
+                Console.WriteLine($"{++index} - {item}");
             }
-            store.WriteToFile();
-            foreach (var item in pizzas.Pizzas)
+        }
+
+        private static void DisplayStoreMenu()
+        {
+            var index = 0;
+
+            foreach (var item in _storeSingleton.Stores)
             {
-                System.Console.WriteLine($"{item.Crust} {item.Size}");
+                Console.WriteLine($"{++index} - {item}");
             }
+        }
+
+        private static APizza SelectPizza()
+        {
+            var input = int.Parse(Console.ReadLine());
+            var pizza = _pizzaSingleton.Pizzas[input - 1];
+
+            DisplayOrder(pizza);
+
+            return pizza;
+        }
+
+        private static AStore SelectStore()
+        {
+            var input = int.Parse(Console.ReadLine()); // be careful (think execpetion/error handling)
+
+            DisplayPizzaMenu();
+
+            return _storeSingleton.Stores[input - 1];
         }
     }
 }

@@ -13,5 +13,32 @@ namespace PizzaBox.Domain.Abstracts
         public Size Size { get; set; }
 
         public List<Topping> Toppings { get; set; }
+
+        protected APizza()
+        {
+            Factory();
+        }
+        //constructor is doing factory method but usually it is separate
+        //and constructor calls factory method
+        private void Factory()
+        {
+            Toppings = new List<Topping>();
+
+            AddCrust();
+            AddSize();
+            AddToppings();
+        }
+
+        public virtual void AddCrust()
+        {
+            Crust = new Crust();
+        }
+
+        public virtual void AddSize()
+        {
+            Size = new Size();
+        }
+
+        public abstract void AddToppings();
     }
 }
