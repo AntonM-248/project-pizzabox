@@ -1,7 +1,9 @@
+using System.IO;
 using System.Collections.Generic;
 using PizzaBox.Domain.Abstracts;
 using PizzaBox.Domain.Models;
 using PizzaBox.Storing.Repositories;
+using System;
 
 namespace PizzaBox.Client.Singletons
 {
@@ -28,7 +30,19 @@ namespace PizzaBox.Client.Singletons
 
         private StoreSingleton()
         {
-            Stores = _fileRepository.ReadFromFile<AStore>(_path);
+            if (File.Exists(_path))
+            {
+                Stores = _fileRepository.ReadFromFile<AStore>(_path);
+            }
+            else
+            {
+                Stores = new List<AStore> { new ChicagoStore(), new NewYorkStore() };
+            }
+        }
+
+        public void finish()
+        {
+            _fileRepository.WriteToFile<AStore>(Stores, _path);
         }
     }
 }

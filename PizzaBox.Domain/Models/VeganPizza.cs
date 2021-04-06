@@ -1,22 +1,31 @@
+using System.Collections.Generic;
 using PizzaBox.Domain.Abstracts;
 
 namespace PizzaBox.Domain.Models
 {
     public class VeganPizza : APizza
     {
-
-        public override void AddCrust()
+        public VeganPizza()
         {
-            Crust = null;
+            
         }
 
-        public override void AddSize()
+        public VeganPizza(int n)
         {
-            Size = null;
-        }
-        public override void AddToppings()
-        {
-            Toppings.AddRange(new Topping[] { new Topping(), new Topping() });
+            Toppings = new List<Topping>{
+                    new Topping{
+                        Name = "spinach",
+                        Price = 2,
+                    },
+                    new Topping{
+                        Name = "mushrooms",
+                        Price = 2,
+                    },
+                    new Topping{
+                        Name = "pineapple",
+                        Price = 2,
+                    }
+            };
         }
     }
 }

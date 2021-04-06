@@ -24,10 +24,11 @@ namespace PizzaBox.Client
             DisplayStoreMenu();
 
             order.Customer = new Customer();
-            order.Store = SelectStore();
+            int num = 0;
+            order.Store = SelectStore(ref num).Name;
             order.Pizza = SelectPizza();
-
-            order.Save();
+            _storeSingleton.Stores[num].orders.Add(order);
+            _storeSingleton.finish();
         }
 
         private static void DisplayOrder(APizza pizza)
@@ -65,12 +66,12 @@ namespace PizzaBox.Client
             return pizza;
         }
 
-        private static AStore SelectStore()
+        private static AStore SelectStore(ref int num)
         {
-            var input = int.Parse(Console.ReadLine()); // be careful (think execpetion/error handling)
+            var input = int.Parse(Console.ReadLine()); // be careful (think exception/error handling)
 
             DisplayPizzaMenu();
-
+            num = input - 1;
             return _storeSingleton.Stores[input - 1];
         }
     }

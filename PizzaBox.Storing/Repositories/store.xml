@@ -1,15 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfAStore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <AStore xsi:type="NewYorkStore">
-    <Name>NewYorkStore</Name>
-  </AStore>
   <AStore xsi:type="ChicagoStore">
+    <orders>
+      <Order>
+        <Customer />
+        <Pizza xsi:type="MeatPizza">
+          <Crust>
+            <Name>thick</Name>
+            <Price>3</Price>
+          </Crust>
+          <Size>
+            <Name>large</Name>
+            <Price>10</Price>
+          </Size>
+          <Toppings>
+            <Topping>
+              <Name>chicken</Name>
+              <Price>2</Price>
+            </Topping>
+            <Topping>
+              <Name>beef</Name>
+              <Price>2</Price>
+            </Topping>
+          </Toppings>
+        </Pizza>
+      </Order>
+      <Order>
+        <Customer />
+        <Pizza xsi:type="MeatPizza">
+          <Crust>
+            <Name>thick</Name>
+            <Price>3</Price>
+          </Crust>
+          <Size>
+            <Name>large</Name>
+            <Price>10</Price>
+          </Size>
+          <Toppings>
+            <Topping>
+              <Name>chicken</Name>
+              <Price>2</Price>
+            </Topping>
+            <Topping>
+              <Name>beef</Name>
+              <Price>2</Price>
+            </Topping>
+          </Toppings>
+        </Pizza>
+      </Order>
+      <Order>
+        <Customer />
+        <Pizza xsi:type="MeatPizza">
+          <Crust>
+            <Name>thick</Name>
+            <Price>3</Price>
+          </Crust>
+          <Size>
+            <Name>large</Name>
+            <Price>10</Price>
+          </Size>
+          <Toppings>
+            <Topping>
+              <Name>chicken</Name>
+              <Price>2</Price>
+            </Topping>
+            <Topping>
+              <Name>beef</Name>
+              <Price>2</Price>
+            </Topping>
+          </Toppings>
+        </Pizza>
+      </Order>
+    </orders>
     <Name>ChicagoStore</Name>
   </AStore>
-   <AStore xsi:type="NewYorkStore">
-    <Name>BostonStore</Name>
-  </AStore>
-  <AStore xsi:type="ChicagoStore">
-    <Name>WashingtonStore</Name>
+  <AStore xsi:type="NewYorkStore">
+    <orders>
+      <Order>
+        <Customer />
+        <Pizza xsi:type="VeganPizza">
+          <Toppings>
+            <Topping>
+              <Name>spinach</Name>
+              <Price>2</Price>
+            </Topping>
+            <Topping>
+              <Name>mushrooms</Name>
+              <Price>2</Price>
+            </Topping>
+            <Topping>
+              <Name>pineapple</Name>
+              <Price>2</Price>
+            </Topping>
+          </Toppings>
+        </Pizza>
+      </Order>
+      <Order>
+        <Customer />
+        <Pizza xsi:type="VeganPizza">
+          <Toppings>
+            <Topping>
+              <Name>spinach</Name>
+              <Price>2</Price>
+            </Topping>
+            <Topping>
+              <Name>mushrooms</Name>
+              <Price>2</Price>
+            </Topping>
+            <Topping>
+              <Name>pineapple</Name>
+              <Price>2</Price>
+            </Topping>
+          </Toppings>
+        </Pizza>
+      </Order>
+    </orders>
+    <Name>NewYorkStore</Name>
   </AStore>
 </ArrayOfAStore>
