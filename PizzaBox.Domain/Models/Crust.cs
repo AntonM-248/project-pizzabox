@@ -11,18 +11,18 @@ namespace PizzaBox.Domain.Models
 
         public Crust(int n)
         {
-            switch(n)
+            switch (n)
             {
                 case 0:
-                    Name = "thin";
+                    Name = "thinCrust";
                     Price = 1;
                     break;
                 case 1:
-                    Name = "medium";
+                    Name = "mediumCrust";
                     Price = 2;
                     break;
                 case 2:
-                    Name = "thick";
+                    Name = "thickCrust";
                     Price = 3;
                     break;
             }

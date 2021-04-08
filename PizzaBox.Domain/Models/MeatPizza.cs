@@ -11,6 +11,7 @@ namespace PizzaBox.Domain.Models
         }
         public MeatPizza(int n)
         {
+            Name = "MeatPizza";
             Size = new Size(2);
             Crust = new Crust(2);
             Toppings = new List<Topping>
@@ -26,6 +27,16 @@ namespace PizzaBox.Domain.Models
                     }
             };
         }
-
+        public override decimal GetPrice()
+        {
+            decimal result = 0;
+            foreach (Topping top in Toppings)
+            {
+                result += top.Price;
+            }
+            result += Size.Price;
+            result += Crust.Price;
+            return result;
+        }
     }
 }

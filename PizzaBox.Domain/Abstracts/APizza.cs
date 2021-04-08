@@ -12,36 +12,16 @@ namespace PizzaBox.Domain.Abstracts
     public abstract class APizza
     {
         //fields   
+        public string Name;
         public Crust Crust;
         public Size Size;
 
+        public abstract decimal GetPrice();
         public List<Topping> Toppings;
 
-        // protected APizza()
-        // {
-        //     Factory();
-        // }
-        // //constructor is doing factory method but usually it is separate
-        // //and constructor calls factory method
-        // private void Factory()
-        // {
-        //     Toppings = new List<Topping>();
-
-        //     AddCrust();
-        //     AddSize();
-        //     AddToppings();
-        // }
-
-        // public virtual void AddCrust()
-        // {
-        //     Crust = new Crust();
-        // }
-
-        // public virtual void AddSize()
-        // {
-        //     Size = new Size();
-        // }
-
-        // public abstract void AddToppings();
+        public override string ToString()
+        {
+            return $"{Name} ${GetPrice()}";
+        }
     }
 }

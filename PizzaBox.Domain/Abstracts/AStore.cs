@@ -29,5 +29,13 @@ namespace PizzaBox.Domain.Abstracts
         {
             return $"{Name}";
         }
+
+        public void printOrders()
+        {
+            foreach (Order order in orders)
+            {
+                System.Console.WriteLine(order.ToString());
+            }
+        }
     }
 }

@@ -7,11 +7,12 @@ namespace PizzaBox.Domain.Models
     {
         public VeganPizza()
         {
-            
+
         }
 
         public VeganPizza(int n)
         {
+            Name = "VeganPizza";
             Toppings = new List<Topping>{
                     new Topping{
                         Name = "spinach",
@@ -26,6 +27,16 @@ namespace PizzaBox.Domain.Models
                         Price = 2,
                     }
             };
+        }
+
+        public override decimal GetPrice()
+        {
+            decimal result = 0;
+            foreach (Topping top in Toppings)
+            {
+                result += top.Price;
+            }
+            return result;
         }
     }
 }
