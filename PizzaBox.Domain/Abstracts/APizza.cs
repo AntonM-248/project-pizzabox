@@ -9,6 +9,7 @@ namespace PizzaBox.Domain.Abstracts
     /// </summary>
     [XmlInclude(typeof(MeatPizza))]
     [XmlInclude(typeof(VeganPizza))]
+    [XmlInclude(typeof(CustomPizza))]
     public abstract class APizza
     {
         //fields   

@@ -77,12 +77,34 @@ namespace PizzaBox.Client
         private static List<APizza> SelectPizza()
         {
             List<APizza> pizzas = new List<APizza>();
-            Console.WriteLine("Enter -1 to submit your order");
+            Console.WriteLine("Enter -1 to submit your order, 3 for custom pizza");
             int input = 0;
             while (input != -1)
             {
                 input = int.Parse(Console.ReadLine());
-                if (input != -1)
+                if (input == 3)
+                {
+                    Console.WriteLine("Pick crust: 1 for thin $1, 2 for medium $2, 3 for thick $3");
+                    int num = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Pick a size: 1 for small $6, 2 for medium $8, 3 for large $10");
+                    int num2 = int.Parse(Console.ReadLine());
+                    var pizza = new CustomPizza(num - 1, num2 - 1);
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Console.WriteLine("Pick a topping, each is $2: 1 for pineapple, 2 for mushrooms, 3 for spinach, \n4 for chicken, 5 for beef, -1 to finish adding toppings");
+                        int j = int.Parse(Console.ReadLine());
+                        if (j == -1)
+                        {
+                            i = 100;
+                        }
+                        else
+                        {
+                            pizza.AddTopping(j - 1);
+                        }
+                    }
+                    pizzas.Add(pizza);
+                }
+                else if (input != -1)
                 {
                     var pizza = _pizzaSingleton.Pizzas[input - 1];
                     DisplayOrder(pizza);
