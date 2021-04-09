@@ -1,33 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfAStore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <AStore xsi:type="ChicagoStore">
+<ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Customer>
+    <Name>jon</Name>
     <orders>
       <Order>
         <Customer>
           <orders />
         </Customer>
         <Pizzas>
-          <APizza xsi:type="MeatPizza">
-            <Name>MeatPizza</Name>
-            <Crust>
-              <Name>thickCrust</Name>
-              <Price>3</Price>
-            </Crust>
-            <Size>
-              <Name>large</Name>
-              <Price>10</Price>
-            </Size>
-            <Toppings>
-              <Topping>
-                <Name>chicken</Name>
-                <Price>2</Price>
-              </Topping>
-              <Topping>
-                <Name>beef</Name>
-                <Price>2</Price>
-              </Topping>
-            </Toppings>
-          </APizza>
           <APizza xsi:type="VeganPizza">
             <Name>VeganPizza</Name>
             <Toppings>
@@ -45,8 +25,8 @@
               </Topping>
             </Toppings>
           </APizza>
-          <APizza xsi:type="CustomPizza">
-            <Name>CustomPizza</Name>
+          <APizza xsi:type="MeatPizza">
+            <Name>MeatPizza</Name>
             <Crust>
               <Name>thickCrust</Name>
               <Price>3</Price>
@@ -56,18 +36,6 @@
               <Price>10</Price>
             </Size>
             <Toppings>
-              <Topping>
-                <Name>pineapple</Name>
-                <Price>2</Price>
-              </Topping>
-              <Topping>
-                <Name>mushrooms</Name>
-                <Price>2</Price>
-              </Topping>
-              <Topping>
-                <Name>spinach</Name>
-                <Price>2</Price>
-              </Topping>
               <Topping>
                 <Name>chicken</Name>
                 <Price>2</Price>
@@ -85,23 +53,6 @@
           <orders />
         </Customer>
         <Pizzas>
-          <APizza xsi:type="VeganPizza">
-            <Name>VeganPizza</Name>
-            <Toppings>
-              <Topping>
-                <Name>spinach</Name>
-                <Price>2</Price>
-              </Topping>
-              <Topping>
-                <Name>mushrooms</Name>
-                <Price>2</Price>
-              </Topping>
-              <Topping>
-                <Name>pineapple</Name>
-                <Price>2</Price>
-              </Topping>
-            </Toppings>
-          </APizza>
           <APizza xsi:type="MeatPizza">
             <Name>MeatPizza</Name>
             <Crust>
@@ -125,6 +76,11 @@
           </APizza>
         </Pizzas>
       </Order>
+    </orders>
+  </Customer>
+  <Customer>
+    <Name>sean</Name>
+    <orders>
       <Order>
         <Customer>
           <orders />
@@ -167,39 +123,5 @@
         </Pizzas>
       </Order>
     </orders>
-    <Name>ChicagoStore</Name>
-  </AStore>
-  <AStore xsi:type="NewYorkStore">
-    <orders>
-      <Order>
-        <Customer>
-          <orders />
-        </Customer>
-        <Pizzas>
-          <APizza xsi:type="MeatPizza">
-            <Name>MeatPizza</Name>
-            <Crust>
-              <Name>thickCrust</Name>
-              <Price>3</Price>
-            </Crust>
-            <Size>
-              <Name>large</Name>
-              <Price>10</Price>
-            </Size>
-            <Toppings>
-              <Topping>
-                <Name>chicken</Name>
-                <Price>2</Price>
-              </Topping>
-              <Topping>
-                <Name>beef</Name>
-                <Price>2</Price>
-              </Topping>
-            </Toppings>
-          </APizza>
-        </Pizzas>
-      </Order>
-    </orders>
-    <Name>NewYorkStore</Name>
-  </AStore>
-</ArrayOfAStore>
+  </Customer>
+</ArrayOfCustomer>

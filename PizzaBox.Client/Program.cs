@@ -11,6 +11,8 @@ namespace PizzaBox.Client
         private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
         private static readonly PizzaSingleton _pizzaSingleton = PizzaSingleton.Instance;
 
+        private static readonly CustomerSingleton _customerSingleton = CustomerSingleton.Instance;
+
         private static void Main(string[] args)
         {
             Console.WriteLine("Enter 1 if customer, 2 if store owner");
@@ -34,19 +36,31 @@ namespace PizzaBox.Client
 
         private static void Run()
         {
-            var order = new Order();
-
-            Console.WriteLine("Welcome to PizzaBox");
-            DisplayStoreMenu();
-
-            order.Customer = new Customer();
-            int num = 0;
-            order.Store = SelectStore(ref num).Name;
-            order.Pizzas = SelectPizza();
-            Console.WriteLine($"Your total is ${order.GetPrice()}");
-            Console.WriteLine($"{order.ToString()}");
-            _storeSingleton.Stores[num].orders.Add(order);
-            _storeSingleton.finish();
+            Console.WriteLine("Please enter your user id, or if you are a new user, enter your desired user id");
+            string Name = Console.ReadLine();
+            Customer Customer = _customerSingleton.FindCustomer(Name);
+            Console.WriteLine("Enter 1 to place order, 2 to view order history");
+            string response = Console.ReadLine();
+            if (response == "1")
+            {
+                var order = new Order();
+                Console.WriteLine("Welcome to PizzaBox");
+                DisplayStoreMenu();
+                order.Customer = new Customer();
+                int num = 0;
+                order.Store = SelectStore(ref num).Name;
+                order.Pizzas = SelectPizza();
+                Console.WriteLine($"Your total is ${order.GetPrice()}");
+                Console.WriteLine($"{order.ToString()}");
+                _storeSingleton.Stores[num].orders.Add(order);
+                _storeSingleton.finish();
+                _customerSingleton.AddOrder(order, Name);
+                _customerSingleton.finish();
+            }
+            else
+            {
+                Console.WriteLine(Customer.ToString());
+            }
         }
 
         private static void DisplayOrder(APizza pizza)
