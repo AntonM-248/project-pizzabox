@@ -5,10 +5,9 @@ namespace PizzaBox.Domain.Models
 {
     public class ChicagoStore : AStore
     {
-        public new string Name = "ChicagoStore";
         public ChicagoStore()
         {
-            // Name = "ChicagoStore";
+            Name = "ChicagoStore";
             // var customer = new Customer();
             // var pizza = new MeatPizza();
             // var order = new Order();

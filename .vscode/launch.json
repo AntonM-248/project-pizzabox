@@ -25,3 +25,4 @@
         }
     ]
 }
+//dotnet ef dbcontext scaffold "Server=tcp:p1.database.windows.net,1433;Initial Catalog=myDB;User ID=p1;Password=Pword000" Microsoft.EntityFrameworkCore.SqlServer --force -t OrderHistory -o Entities

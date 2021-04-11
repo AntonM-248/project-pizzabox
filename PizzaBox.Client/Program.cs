@@ -1,8 +1,11 @@
 ﻿using System;
+using PizzaBox.Storing.Entities;
 using System.Collections.Generic;
 using PizzaBox.Domain.Abstracts;
 using PizzaBox.Domain.Models;
 using PizzaBox.Client.Singletons;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace PizzaBox.Client
 {
@@ -43,12 +46,14 @@ namespace PizzaBox.Client
             string response = Console.ReadLine();
             if (response == "1")
             {
+                myDBContext context = new myDBContext();
                 var order = new Order();
                 Console.WriteLine("Welcome to PizzaBox");
                 DisplayStoreMenu();
                 order.Customer = new Customer();
                 int num = 0;
-                order.Store = SelectStore(ref num).Name;
+                SelectStore(ref num);
+                order.Store = _storeSingleton.Stores[num].Name;
                 order.Pizzas = SelectPizza();
                 Console.WriteLine($"Your total is ${order.GetPrice()}");
                 Console.WriteLine($"{order.ToString()}");
@@ -56,6 +61,17 @@ namespace PizzaBox.Client
                 _storeSingleton.finish();
                 _customerSingleton.AddOrder(order, Name);
                 _customerSingleton.finish();
+
+                var OH = new OrderHistory()
+                {
+                    StoreName = _storeSingleton.Stores[num].Name,
+                    CustomerName = Name,
+                    TotalPrice = (int)order.GetPrice(),
+                };
+                OH.SetPriceZero();
+                context.Add(OH);
+                context.SaveChanges();
+
             }
             else
             {

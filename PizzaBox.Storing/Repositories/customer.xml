@@ -8,6 +8,27 @@
           <orders />
         </Customer>
         <Pizzas>
+          <APizza xsi:type="MeatPizza">
+            <Name>MeatPizza</Name>
+            <Crust>
+              <Name>thickCrust</Name>
+              <Price>3</Price>
+            </Crust>
+            <Size>
+              <Name>large</Name>
+              <Price>10</Price>
+            </Size>
+            <Toppings>
+              <Topping>
+                <Name>chicken</Name>
+                <Price>2</Price>
+              </Topping>
+              <Topping>
+                <Name>beef</Name>
+                <Price>2</Price>
+              </Topping>
+            </Toppings>
+          </APizza>
           <APizza xsi:type="VeganPizza">
             <Name>VeganPizza</Name>
             <Toppings>
@@ -25,6 +46,13 @@
               </Topping>
             </Toppings>
           </APizza>
+        </Pizzas>
+      </Order>
+      <Order>
+        <Customer>
+          <orders />
+        </Customer>
+        <Pizzas>
           <APizza xsi:type="MeatPizza">
             <Name>MeatPizza</Name>
             <Crust>
@@ -42,6 +70,23 @@
               </Topping>
               <Topping>
                 <Name>beef</Name>
+                <Price>2</Price>
+              </Topping>
+            </Toppings>
+          </APizza>
+          <APizza xsi:type="VeganPizza">
+            <Name>VeganPizza</Name>
+            <Toppings>
+              <Topping>
+                <Name>spinach</Name>
+                <Price>2</Price>
+              </Topping>
+              <Topping>
+                <Name>mushrooms</Name>
+                <Price>2</Price>
+              </Topping>
+              <Topping>
+                <Name>pineapple</Name>
                 <Price>2</Price>
               </Topping>
             </Toppings>
@@ -70,6 +115,23 @@
               </Topping>
               <Topping>
                 <Name>beef</Name>
+                <Price>2</Price>
+              </Topping>
+            </Toppings>
+          </APizza>
+          <APizza xsi:type="VeganPizza">
+            <Name>VeganPizza</Name>
+            <Toppings>
+              <Topping>
+                <Name>spinach</Name>
+                <Price>2</Price>
+              </Topping>
+              <Topping>
+                <Name>mushrooms</Name>
+                <Price>2</Price>
+              </Topping>
+              <Topping>
+                <Name>pineapple</Name>
                 <Price>2</Price>
               </Topping>
             </Toppings>
@@ -79,13 +141,81 @@
     </orders>
   </Customer>
   <Customer>
-    <Name>sean</Name>
+    <Name>j</Name>
     <orders>
       <Order>
+        <Store>ChicagoStore</Store>
         <Customer>
           <orders />
         </Customer>
         <Pizzas>
+          <APizza xsi:type="MeatPizza">
+            <Name>MeatPizza</Name>
+            <Crust>
+              <Name>thickCrust</Name>
+              <Price>3</Price>
+            </Crust>
+            <Size>
+              <Name>large</Name>
+              <Price>10</Price>
+            </Size>
+            <Toppings>
+              <Topping>
+                <Name>chicken</Name>
+                <Price>2</Price>
+              </Topping>
+              <Topping>
+                <Name>beef</Name>
+                <Price>2</Price>
+              </Topping>
+            </Toppings>
+          </APizza>
+          <APizza xsi:type="VeganPizza">
+            <Name>VeganPizza</Name>
+            <Toppings>
+              <Topping>
+                <Name>spinach</Name>
+                <Price>2</Price>
+              </Topping>
+              <Topping>
+                <Name>mushrooms</Name>
+                <Price>2</Price>
+              </Topping>
+              <Topping>
+                <Name>pineapple</Name>
+                <Price>2</Price>
+              </Topping>
+            </Toppings>
+          </APizza>
+        </Pizzas>
+      </Order>
+      <Order>
+        <Store>ChicagoStore</Store>
+        <Customer>
+          <orders />
+        </Customer>
+        <Pizzas>
+          <APizza xsi:type="MeatPizza">
+            <Name>MeatPizza</Name>
+            <Crust>
+              <Name>thickCrust</Name>
+              <Price>3</Price>
+            </Crust>
+            <Size>
+              <Name>large</Name>
+              <Price>10</Price>
+            </Size>
+            <Toppings>
+              <Topping>
+                <Name>chicken</Name>
+                <Price>2</Price>
+              </Topping>
+              <Topping>
+                <Name>beef</Name>
+                <Price>2</Price>
+              </Topping>
+            </Toppings>
+          </APizza>
           <APizza xsi:type="VeganPizza">
             <Name>VeganPizza</Name>
             <Toppings>
@@ -110,12 +240,20 @@
               <Price>1</Price>
             </Crust>
             <Size>
-              <Name>medium</Name>
-              <Price>8</Price>
+              <Name>small</Name>
+              <Price>6</Price>
             </Size>
             <Toppings>
               <Topping>
-                <Name>spinach</Name>
+                <Name>pineapple</Name>
+                <Price>2</Price>
+              </Topping>
+              <Topping>
+                <Name>pineapple</Name>
+                <Price>2</Price>
+              </Topping>
+              <Topping>
+                <Name>mushrooms</Name>
                 <Price>2</Price>
               </Topping>
             </Toppings>
